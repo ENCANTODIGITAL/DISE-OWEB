@@ -2,8 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Freeman&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" );
-
 *{
     text-decoration: none;
     padding: 0%;
@@ -255,14 +253,14 @@ nav {
 }
 
 nav a {
-    color:rgb(41, 168, 206);
+    color: rgb(41, 168, 206);
     
     margin-left: 30px; /* Espacio entre los botones */
 }
 #botonesinicio{
     
         font-size: 30px;
-        color:rgb(41, 168, 206);
+        color: rgb(41, 168, 206);
         text-decoration: none;
         margin: 14px 30px;
     }
@@ -349,59 +347,31 @@ nav a {
     cursor: pointer;
 }
 /* desde aca empieza la reseña */
-/* ✅ CONTENEDOR PRINCIPAL */
 .reasons-to-choose {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;          /* Permite que texto y carrusel se acomoden */
-    gap: 60px;                /* Espacio elegante entre texto y carrusel */
-    
+    height:100vh ;
     background-color: #333;
-    padding: 100px 40px;      /* Mucho más equilibrado */
-    
+    padding: 200px 40px;
+    text-align: left;
     color: rgb(251, 241, 241);
-    text-align: center;       /* Centra el texto */
-    
-    border-top: 10px solid #000; /* Más limpio que bordear todo */
+    position: relative;
+    z-index: 1;
+    border: 10px solid #000;
+    overflow: hidden;
 }
 
-/* ✅ TEXTO DEL PLAN */
-.reasons-text {
-    transform: translateX(170px); /* ✅ Mueve el texto un poco a la derecha */
-    text-align: left;            /* ✅ Mantiene la lectura natural en PC */
-}
 
-.reasons-text h2 {
-    font-size: 56px;
-    color: #c49b0b;
-    margin-bottom: 10px;
-}
-
-.reasons-text .p-negrita {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.reasons-text p {
-    font-size: 22px;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-/* ✅ CARRUSEL */
+/* 🎯 Carrusel pequeño: estilos para todos los carruseles mini */
 .mini-carousel-box {
-  width: 420px;
-  height: 650px;
-  margin: 0 auto;
+  width: 500px;
+  height: 800px;
+  margin: 20px auto;
   position: relative;
   overflow: hidden;
-
-  border-radius: 15px; /* Más moderno */
-  border: 2px solid #444;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4); /* Elegante */
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
 .mini-image-slider {
@@ -423,44 +393,42 @@ nav a {
   object-fit: cover;
 }
 
-/* ✅ Flechas */
 .mini-prev, .mini-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
-  background: rgba(0,0,0,0.4);
-  padding: 10px;
+  background: rgba(0,0,0,0.3);
+  padding: 5px;
   cursor: pointer;
   z-index: 10;
-  border-radius: 8px;
 }
 
-.mini-prev { left: 10px; }
-.mini-next { right: 10px; }
+.mini-prev { left: 5px; }
+.mini-next { right: 5px; }
 
-/* ✅ Dots */
 .mini-slider-dots {
   position: absolute;
-  bottom: 10px;
+  bottom: 5px;
   width: 100%;
   text-align: center;
 }
 
 .mini-slider-dot {
   display: inline-block;
-  width: 12px;
-  height: 12px;
-  margin: 0 4px;
+  width: 10px;
+  height: 10px;
+  margin: 0 3px;
   background-color: #bbb;
   border-radius: 50%;
   cursor: pointer;
 }
 
 .mini-slider-dot.active {
-  background-color: #c49b0b;
+  background-color: #333;
 }
+/* ✅ Fin de mini carrusel */
 
 
 
@@ -572,13 +540,12 @@ nav a {
 
 .promo-title {
   font-size: 64px;
-  color:#c49b0b;
+  color: #33c6e0;
   margin-bottom: 20px;
   font-weight: 700;
 }
 
 .promo-text p {
-  
   font-size: 32px;
   color: aliceblue;
   line-height: 1.8;
@@ -665,94 +632,7 @@ nav a {
 
 
 
-
-
-
-/* 🔘 Botón flotante que abre el chatbot */
-/* 🔘 Botón flotante que abre el chatbot */
-#chat-toggle {
-  position: fixed;
-  bottom: 50px;
-  right: 40px;
-  background: transparent;
-  border: none;
-  z-index: 999;
-  cursor: pointer;
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* 🖼️ Imagen dentro del botón del chatbot */
-#chat-toggle img {
-  width: 60px !important;
-  height: 60px !important;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  transition: transform 0.2s ease;
-  object-fit: cover;
-  cursor: pointer;
-}
-
-
-
-
-/* 💬 Contenedor del chatbot que aparece al hacer clic */
-#chatbot-container {
-  position: fixed;
-  bottom: 40px;
-  right: 220px; /* ← Lo alejamos del botón */
-  width: 300px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  font-family: sans-serif;
-  display: none;
-  flex-direction: column;
-  overflow: hidden;
-  z-index: 998;
-}
-
-
-/* 🟪 Encabezado del chatbot */
-#chat-header {
-  background: #6C63FF;     /* Color de fondo del encabezado */
-  color: white;            /* Texto blanco */
-  padding: 10px;           /* Espaciado interno */
-  font-weight: bold;       /* Texto en negrita */
-}
-
-/* 📜 Área donde se muestran los mensajes del chat */
-#chat-log {
-  padding: 10px;           /* Espaciado interno */
-  height: 200px;           /* Altura fija del área de mensajes */
-  overflow-y: auto;        /* Permite hacer scroll si hay muchos mensajes */
-}
-
-/* 🧾 Área de entrada de texto y botón de envío */
-#chat-input {
-  display: flex;           /* Organiza el input y el botón en fila */
-  border-top: 1px solid #ccc; /* Línea divisoria superior */
-}
-
-/* ✏️ Campo donde el usuario escribe su pregunta */
-#chat-input input {
-  flex: 1;                 /* Ocupa todo el espacio disponible */
-  padding: 10px;           /* Espaciado interno */
-  border: none;            /* Sin borde */
-}
-
-/* 📤 Botón para enviar el mensaje */
-#chat-input button {
-  background: #6C63FF;     /* Color de fondo del botón */
-  color: white;            /* Texto blanco */
-  border: none;            /* Sin borde */
-  padding: 10px;           /* Espaciado interno */
-  cursor: pointer;         /* Cursor tipo mano al pasar el mouse */
-}     
-/* 🔘 Botón flotante que abre el chatbot */
+/* 🔘 Botón flotante (mantiene tu estilo actual) */
 #chat-toggle {
   position: fixed;
   bottom: 200px;
@@ -765,7 +645,6 @@ nav a {
   height: 160px;
 }
 
-/* 🖼️ Imagen dentro del botón del chatbot */
 #chat-toggle img {
   width: 160px;
   height: 160px;
@@ -775,7 +654,96 @@ nav a {
   cursor: pointer;
 }
 
+/* 💬 Contenedor del chatbot */
+#chatbot-container {
+  position: fixed;
+  bottom: 40px;
+  right: 220px;
+  width: 400px;              /* 🔥 más ancho */
+  height: 500px;             /* 🔥 más alto */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  font-family: 'Segoe UI', sans-serif;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 998;
+}
 
+/* 🟪 Encabezado */
+#chat-header {
+  background: #111;          /* negro premium */
+  color: #f5d142;            /* dorado elegante */
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* 📜 Área de mensajes */
+#chat-log {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* 🧾 Área de entrada */
+#chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  background: #fafafa;
+}
+
+#chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+#chat-input button {
+  margin-left: 10px;
+  padding: 10px 15px;
+  background: #f5d142;       /* dorado */
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #111;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#chat-input button:hover {
+  background: #e0c030;       /* dorado más oscuro al hover */
+}
+
+/* 🎯 Botones del menú */
+.chat-buttons {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chat-buttons button {
+  flex: 1 1 45%;
+  padding: 10px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.chat-buttons button:hover {
+  background: #333;
+}
 
 
 
@@ -1440,9 +1408,6 @@ nav a {
   color: #ccc;
 }
 
-
-
-
         
 @media screen and (max-width: 768px) {
   header {
@@ -1518,16 +1483,44 @@ nav a {
     width: 90%;
     height: auto;
   }
-      .reasons-text {
-        transform: none;     /* ✅ Vuelve a su posición normal */
-        text-align: center;  /* ✅ Se ve perfecto en móvil */
-    }
 
+  .reasons-to-choose {
+    flex-direction: column;
+    padding: 40px 20px;
+    height: auto;
 
+  }
 
+  #reasons-text {
+    margin-right: 0;
+    flex-basis: 100%;
+  }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+  }
 
+  .footer-logo-text {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
 
+  .footer-logo-img {
+    width: 90%;
+    height: auto;
+  }
 
+  .footer-title {
+    font-size: 30px;
+  }
+
+  .footer-c1 p {
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+  }
 
 
   #chat-toggle,
@@ -1648,28 +1641,6 @@ nav a {
     max-width: 350px;
     margin: 0 auto;
   }
-
-     .reasons-to-choose {
-        padding: 60px 20px;
-    }
-
-    .reasons-text h2 {
-        font-size: 40px;
-    }
-
-    .reasons-text .p-negrita {
-        font-size: 22px;
-    }
-
-    .reasons-text p {
-        font-size: 18px;
-    }
-
-    .mini-carousel-box {
-        width: 90%;
-        height: 450px;
-    }
-
 }
 
 
@@ -1719,3 +1690,44 @@ nav a {
   }
 }
 
+/* 📱 Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  #chat-toggle {
+    width: 100px;
+    height: 100px;
+    bottom: 100px;   /* lo subimos un poco */
+    right: 20px;     /* lo acercamos al borde */
+  }
+
+  #chat-toggle img {
+    width: 100px;
+    height: 100px;
+  }
+
+  #chatbot-container {
+    width: 90%;      /* ocupa casi todo el ancho */
+    right: 5%;       /* centrado con margen */
+    height: 400px;   /* más compacto */
+  }
+}
+
+/* 📱 Extra pequeño (celulares muy chicos) */
+@media (max-width: 480px) {
+  #chat-toggle {
+    width: 80px;
+    height: 80px;
+    bottom: 80px;
+    right: 15px;
+  }
+
+  #chat-toggle img {
+    width: 80px;
+    height: 80px;
+  }
+
+  #chatbot-container {
+    width: 95%;
+    right: 2.5%;
+    height: 350px;
+  }
+}

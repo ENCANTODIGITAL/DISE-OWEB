@@ -1,0 +1,818 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Freeman&display=swap');
+
+* {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    background-color: #000000; /* Negro base */
+    color: #FFD700; /* Dorado */
+}
+
+/* Estilos para el encabezado */
+header {
+    height: 200px;
+    background-color: #000000; /* Fondo negro */
+    color: #FFD700; /* Texto dorado */
+    padding: 10px 100px 10px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilos para el logo */
+#logo {
+    width: 400px;
+    height: auto;
+}
+
+/* Estilos para la frase de la empresa */
+#slogan {
+    transform: translate(90px,0px);
+    display: flex;
+    align-items: center;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
+    color: #FFD700;
+}
+
+#sa {
+    transform: translate(80px, 0px);
+    font-size: 30px;
+    color: #FFD700;
+}
+
+/* Estilos para los botones de navegación */
+nav {
+    padding: 0px 0px 0px 100px;
+}
+
+nav a {
+    color: #FFD700;
+    margin-left: 30px;
+}
+
+#botonesinicio {
+    font-size: 30px;
+    color: #FFD700;
+    text-decoration: none;
+    margin: 14px 30px;
+}
+#main-box {
+    background-color: #000000; /* Negro base */
+    text-align: center;
+    padding: 20px 0;
+    color: #FFD700; /* Texto dorado */
+}
+
+#image-container {
+    text-align: center;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+#image-slider {
+    width: 100vw;
+    position: relative;
+    display: flex;
+    transition: transform 0.5s ease;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-img {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.slider-img img {
+    transform: translateY(-200px);
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+#prev, #next {
+    font-size: 48px;
+    cursor: pointer;
+    color: #FFD700; /* Dorado */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro translúcido */
+    padding: 20px;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#prev { left: 10px; }
+#next { right: 10px; }
+
+#slider-dots {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.slider-dot {
+    width: 20px;
+    height: 20px;
+    background-color: #FFD700; /* Dorado */
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.slider-dot {
+    width: 20px;
+    height: 20px;
+    background-color: #FFD700; /* Dorado */
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+/* desde aca empieza la reseña */
+.reasons-to-choose {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    background-color: #000000; /* Negro */
+    padding: 200px 40px;
+    text-align: left;
+    color: #FFD700; /* Dorado */
+    position: relative;
+    z-index: 1;
+    border: 10px solid #FFD700; /* Dorado */
+    overflow: hidden;
+    flex-direction: column;
+}
+
+/* 🎯 Carrusel pequeño: estilos para todos los carruseles mini */
+.mini-carousel-box {
+  width: 100%;
+  height: 800px;
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #FFD700; /* Dorado */
+  box-shadow: 0 0 5px rgba(255,215,0,0.5);
+  max-width: 900px;
+}
+
+.mini-image-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.mini-slider-img {
+  display: none;
+  position: absolute;
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  width: 400px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255,215,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.mini-slider-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mini-slider-img img:hover {
+  transform: scale(1.05);
+}
+
+.mini-prev, .mini-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: #FFD700; /* Dorado */
+  background: rgba(0,0,0,0.6); /* Negro translúcido */
+  padding: 5px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.mini-prev { left: 5px; }
+.mini-next { right: 5px; }
+
+.mini-slider-dots {
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  text-align: center;
+}
+
+.mini-slider-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 3px;
+  background-color: #FFD700; /* Dorado */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mini-slider-dot.active {
+  background-color: #FFD700; /* Dorado */
+}
+/* Estilos para el texto de los encabezados */
+.reasons-to-choose h2 {
+    padding:0px 0 40px 40px;
+    font-family: "Freeman", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    max-width: 700px;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #FFD700; /* Dorado */
+}
+
+/* Estilos para el texto de los párrafos */
+.reasons-text p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    padding: 0px 15px 0px 35px;
+    max-width: 700px;
+    text-align: center;
+    color: #FFD700; /* Dorado */
+}
+
+#reasons-image img {
+    max-width: 600px;
+}
+
+#reasons-text {
+    flex-basis: calc(50% - 20px);
+    margin-right: 20px;
+    max-width: 700px;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #FFD700; /* Dorado */
+}
+
+/* Footer */
+.footer-creative {
+    background-color: #000000; /* Negro */
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.footer-logo-img {
+  width: 600px;
+  height: auto;
+  display: block;
+  padding: 0;
+}
+
+.footer-button-img {
+  width: 200px;
+  height: auto;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(255,215,0,0.5);
+  transition: transform 0.3s ease;
+  display: block;
+  margin-top: 15px;
+}
+
+.footer-button-img:hover {
+  transform: scale(1.05);
+}
+
+.footer-creative h3 {
+    font-size:60px;
+    color: #FFD700; /* Dorado */
+}
+
+.footer-creative p {
+    font-size: 30px;
+    color: #FFD700; /* Dorado */
+}
+
+.footer-content {
+    display: flex;
+    padding: 0;
+}
+
+.footer-animation {
+    margin-right: 10px;
+    padding: 0px 50px 0px 80px;
+}
+
+.slider-text {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color: #000000; /* Negro texto */
+    text-align: center;
+    max-width: 80%;
+    border-radius: 100px;
+    background-color: rgba(255, 215, 0, 0.7); /* Dorado translúcido */
+}
+
+.slider-text h3 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.slider-text p {
+    font-size: 30px;
+    margin: 0;
+}
+
+.footer-c1 {
+  transform: translate(10px, -50px);
+}
+/*boton de wasap*/
+.whatsapp-fixed {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1100;
+}
+
+.whatsapp-fixed img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255,215,0,0.5);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.whatsapp-fixed img:hover {
+  transform: scale(1.1);
+}
+
+/* 🔘 Botón flotante que abre el chatbot */
+#chat-toggle {
+  position: fixed;
+  bottom: 50px;
+  right: 40px;
+  background: transparent;
+  border: none;
+  z-index: 999;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🖼️ Imagen dentro del botón del chatbot */
+#chat-toggle img {
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255,215,0,0.5);
+  transition: transform 0.2s ease;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* 💬 Contenedor del chatbot */
+#chatbot-container {
+  position: fixed;
+  bottom: 40px;
+  right: 220px;
+  width: 300px;
+  background: #000000; /* Negro */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255,215,0,0.5);
+  font-family: sans-serif;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 998;
+  color: #FFD700; /* Dorado */
+}
+
+/* 🟪 Encabezado del chatbot */
+#chat-header {
+  background: #FFD700; /* Dorado */
+  color: #000000; /* Negro texto */
+  padding: 10px;
+  font-weight: bold;
+}
+
+/* 📜 Área de mensajes */
+#chat-log {
+  padding: 10px;
+  height: 200px;
+  overflow-y: auto;
+  background-color: #000000;
+  color: #FFD700;
+}
+
+/* 🧾 Área de entrada */
+#chat-input {
+  display: flex;
+  border-top: 1px solid #FFD700;
+}
+
+#chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background-color: #000000;
+  color: #FFD700;
+}
+
+#chat-input button {
+  background: #FFD700;
+  color: #000000;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* NOSOTROS */
+#image-container1 {
+    text-align: center;
+    position: relative;
+    height: 30vh;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+#us-section {
+    border: 2px solid #FFD700;
+    background-color: #000000;
+    color: #FFD700;
+    padding: 0;
+    text-align: center;
+}
+
+#reviews-box {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: #000000;
+    padding: 0px;
+    text-align: center;
+    color: #FFD700;
+}
+
+#review-text {
+    width: 40%;
+    padding:100px 70px 40px 80px;
+    font-size: 18px;
+    float: left;
+    text-align: left;
+    color: #FFD700;
+}
+
+#review-text h2 {
+    font-size: 30px;
+    padding: 0px 0 25px 0;
+    color: #FFD700;
+}
+
+#review-image {
+    width: 35%;
+    padding: 100px 160px 100px 40px;
+    float: right;
+    margin-top: 20px;
+}
+/*                   Carusel                      */
+#carousel {
+    height: 100vh;
+    background-color: #000000; /* Negro */
+}
+
+#carousel h2 {
+    color: #FFD700; /* Dorado */
+    font-size: 50px;
+    padding:75px 0 75px 400px;
+    font-family: "Freeman", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.carousel-item {
+    background-color: #000000; /* Negro */
+    height: 50vh;
+}
+
+.carousel-item img {
+    margin: 20px;
+    width: 400px 300px;
+    height: 40vh;
+}
+
+/* SERVICIOS */
+
+/* Estilos para el menú desplegable */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000000; /* Negro */
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(255,215,0,0.5);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: #FFD700; /* Dorado */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255,215,0,0.2);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .button {
+    background-color: #FFD700;
+    color: #000000;
+}
+
+/* Estilos para el contenido adicional */
+#us-section1 {
+    background-color:#000000;
+    color: #FFD700;
+    padding: 20px;
+    text-align: center;
+    height: 85vh;
+}
+
+#us-section12 {
+    background-color: #000000;
+    color: #FFD700;
+    padding: 20px;
+    text-align: center;
+    height: 85vh;
+}
+
+#reviews-box1 {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #000000;
+    text-align: center;
+    color: #FFD700;
+}
+
+#review-text1 {
+    width: 40%;
+    float: left;
+    text-align: left;
+    color: #FFD700;
+}
+
+#cajadeservicios {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #000000;
+    text-align: center;
+    color: #FFD700;
+}
+
+#cuadrodetexto {
+    width: 40%;
+    float: left;
+    text-align: left;
+    color: #FFD700;
+}
+
+#review-text1 h2 {
+    font-size: 60px;
+    padding: 80px 0px 20px 120px;
+    color: #FFD700;
+}
+
+#review-text1 p {
+    font-size: 20px;
+    padding: 10px 0px 80px 100px;
+    color: #FFD700;
+}
+
+#review-image1 {
+    width: 530px;
+    float: right;
+    margin-top: 40px;
+    margin-right: 100px;
+    border: 5px solid #FFD700;
+    padding: 10px;
+    background-color: rgba(255, 215, 0, 0.2);
+}
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 20px;
+    height: auto;
+    text-align: center;
+    background-color: #000000;
+    color: #FFD700;
+  }
+
+  #logo {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  #slogan {
+    transform: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #FFD700;
+  }
+
+  #sa {
+    transform: none;
+    font-size: 20px;
+    padding: 10px;
+    color: #FFD700;
+  }
+
+  #image-container,
+  .slider-img {
+    height: auto;
+  }
+
+  .slider-text {
+    position: static;
+    transform: none;
+    background-color: rgba(255, 215, 0, 0.8); /* Dorado translúcido */
+    padding: 10px;
+    border-radius: 20px;
+    margin: 10px auto;
+    color: #000000;
+  }
+
+  .slider-text h3 {
+    font-size: 24px;
+  }
+
+  .slider-text p {
+    font-size: 18px;
+  }
+}
+.mini-carousel-box {
+    width: 90%;
+    height: auto;
+    border: 1px solid #FFD700; /* Dorado */
+    box-shadow: 0 0 5px rgba(255,215,0,0.5);
+}
+
+#reasons-to-choose {
+    flex-direction: column;
+    padding: 40px 20px;
+    height: auto;
+    background-color: #000000;
+    color: #FFD700;
+}
+
+#reasons-text {
+    margin-right: 0;
+    flex-basis: 100%;
+    color: #FFD700;
+}
+
+.footer-creative {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    background-color: #000000;
+    color: #FFD700;
+}
+
+.footer-logo-img {
+    width: 80%;
+}
+
+.footer-c1 {
+    transform: none;
+    text-align: center;
+}
+
+.footer-creative h3 {
+    font-size: 30px;
+    color: #FFD700;
+}
+
+.footer-creative p {
+    font-size: 18px;
+    color: #FFD700;
+}
+
+#chat-toggle,
+.whatsapp-fixed img {
+    width: 60px;
+    height: 60px;
+}
+
+#chatbot-container {
+    right: 10px;
+    bottom: 110px;
+    width: 90%;
+    background-color: #000000;
+    color: #FFD700;
+    border: 2px solid #FFD700;
+}
+
+#review-text,
+#review-text1,
+#cuadrodetexto {
+    width: 100%;
+    float: none;
+    padding: 20px;
+    text-align: center;
+    color: #FFD700;
+}
+
+#review-image,
+#review-image1 {
+    width: 100%;
+    float: none;
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px solid #FFD700;
+    background-color: rgba(255,215,0,0.2);
+}
+
+#carousel h2 {
+    padding: 20px;
+    font-size: 28px;
+    color: #FFD700;
+}
+
+.carousel-item img {
+    width: 90%;
+    height: auto;
+}
+
+/* Ajustes responsive para mini carrusel */
+@media screen and (max-width: 768px) {
+  .mini-slider-img {
+    position: static;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .mini-slider-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .mini-carousel-box {
+    height: auto;
+    max-height: none;
+  }
+}
