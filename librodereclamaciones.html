@@ -110,90 +110,85 @@
   <h2>Libro de Reclamaciones (Ley 29571)</h2>
   <p>Conforme al Código de Protección y Defensa del Consumidor, este establecimiento cuenta con un Libro de Reclamaciones a su disposición.</p>
   <form class="form-contacto" id="form-contacto" 
-        action="https://formsubmit.co/artesanowebb@gmail.com" 
-        method="POST" 
-        onsubmit="return validarFormulario()">
-  
-    <fieldset>
-      <legend>Datos Personales</legend>
+      action="https://formsubmit.co/artesanowebb@gmail.com" 
+      method="POST" 
+      onsubmit="return validarFormulario()">
 
-      <label>DNI:</label>
-      <input type="text" id="dni" required maxlength="8" inputmode="numeric" title="Ingrese solo 8 números">
-      <span class="error-msg"></span>
+  <fieldset>
+    <legend>Datos Personales</legend>
+    <label>DNI:</label>
+    <input type="text" id="dni" name="dni" required maxlength="8" inputmode="numeric" title="Ingrese solo 8 números">
+    <span class="error-msg"></span>
 
-      <label>Nombre:</label>
-      <input type="text" id="nombre" required maxlength="40">
-      <span class="error-msg"></span>
+    <label>Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required maxlength="40">
+    <span class="error-msg"></span>
 
-      <label>Apellido paterno:</label>
-      <input type="text" id="apellido-paterno" required maxlength="40">
-      <span class="error-msg"></span>
+    <label>Apellido paterno:</label>
+    <input type="text" id="apellido-paterno" name="apellido_paterno" required maxlength="40">
+    <span class="error-msg"></span>
 
-      <label>Apellido materno:</label>
-      <input type="text" id="apellido-materno" required maxlength="40">
-      <span class="error-msg"></span>
-    </fieldset>
+    <label>Apellido materno:</label>
+    <input type="text" id="apellido-materno" name="apellido_materno" required maxlength="40">
+    <span class="error-msg"></span>
+  </fieldset>
 
-    <fieldset>
-      <legend>Datos para el envío de respuesta</legend>
+  <fieldset>
+    <legend>Datos para el envío de respuesta</legend>
+    <label>Email:</label>
+    <input type="email" id="email" name="email" required>
+    <span class="error-msg"></span>
 
-      <label>Email:</label>
-      <input type="email" id="email" required>
-      <span class="error-msg"></span>
+    <label>Teléfono fijo:</label>
+    <input type="tel" id="fijo" name="fijo" maxlength="7">
+    <span class="error-msg"></span>
 
-      <label>Teléfono fijo:</label>
-      <input type="tel" id="fijo" maxlength="7">
-      <span class="error-msg"></span>
+    <label>Celular:</label>
+    <input type="tel" id="celular" name="celular" required maxlength="9">
+    <span class="error-msg"></span>
 
-      <label>Celular:</label>
-      <input type="tel" id="celular" required maxlength="9">
-      <span class="error-msg"></span>
+    <label>Dirección:</label>
+    <input type="text" id="direccion" name="direccion" required maxlength="80">
+    <span class="error-msg"></span>
+  </fieldset>
 
-      <label>Dirección:</label>
-      <input type="text" id="direccion" required maxlength="80">
-      <span class="error-msg"></span>
-    </fieldset>
+  <fieldset>
+    <legend>Detalle de la queja o reclamo</legend>
+    <label>Tienda donde fue atendido:</label>
+    <select id="tienda" name="tienda" required>
+      <option>Página web</option>
+    </select>
+    <span class="error-msg"></span>
 
-    <fieldset>
-      <legend>Detalle de la queja o reclamo</legend>
+    <label>Monto del reclamo (S/.):</label>
+    <input type="text" id="monto" name="monto" maxlength="8">
+    <span class="error-msg"></span>
 
-      <label>Tienda donde fue atendido:</label>
-      <select id="tienda" required>
-        <option>Página web</option>
-      </select>
-      <span class="error-msg"></span>
+    <label>Tema:</label>
+    <input type="text" id="tema" name="tema" required maxlength="100">
+    <span class="error-msg"></span>
 
-      <label>Monto del reclamo (S/.):</label>
-      <input type="text" id="monto" maxlength="8">
-      <span class="error-msg"></span>
+    <label>Descripción del producto adquirido:</label>
+    <textarea id="descripcion" name="descripcion" rows="2" maxlength="600"></textarea>
+    <span class="error-msg"></span>
 
-      <label>Tema:</label>
-      <input type="text" id="tema" required maxlength="100">
-      <span class="error-msg"></span>
+    <label>Detalle de tu reclamo:</label>
+    <textarea id="detalle" name="detalle" rows="3" maxlength="5000"></textarea>
+    <span class="error-msg"></span>
 
-      <label>Descripción del producto adquirido:</label>
-      <textarea id="descripcion" rows="2" maxlength="600"></textarea>
-      <span class="error-msg"></span>
+    <label>Pedido:</label>
+    <textarea id="pedido" name="pedido" rows="2" maxlength="5000"></textarea>
+    <span class="error-msg"></span>
+  </fieldset>
 
-      <label>Detalle de tu reclamo:</label>
-      <textarea id="detalle" rows="3" maxlength="5000"></textarea>
-      <span class="error-msg"></span>
+  <div class="aceptacion">
+    <input type="checkbox" name="acepto" required>
+    He leído y acepto la <a href="#" id="abrir-modal">Política de privacidad</a>.
+  </div>
 
-      <label>Pedido:</label>
-      <textarea id="pedido" rows="2" maxlength="5000"></textarea>
-      <span class="error-msg"></span>
-    </fieldset>
-
-    <div class="aceptacion">
-        <input type="checkbox" required>
-            He leído y acepto la <a href="#" id="abrir-modal">Política de privacidad</a>.
-
-    </div>
-   
-
-<input type="hidden" name="_captcha" value="false">
-    <button type="submit">ENVIAR</button>
-  </form>
+  <input type="hidden" name="_captcha" value="false">
+  <button type="submit">ENVIAR</button>
+</form>
 </section>
 <!--modal oculto-->
     <div id="modal-privacidad" class="modal">
@@ -251,7 +246,7 @@
   </section>
     </div>
     </div>
-  <!-- Modal de confirmación -->
+<!-- Modal de confirmación -->
 <div id="modal-exito" class="modal">
   <div class="modal-contenido">
     <span class="cerrar" onclick="cerrarModalExito()">&times;</span>
@@ -283,7 +278,6 @@ function cerrarModalExito(){
 }
 </script>
 
- 
 
 
 
